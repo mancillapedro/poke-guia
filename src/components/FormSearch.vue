@@ -9,7 +9,7 @@
       v-model="input"
       required
     />
-    <button type="submit">Buscar</button>
+    <button type="submit" :disabled="!input.trim()">Buscar</button>
   </form>
 </template>
 
