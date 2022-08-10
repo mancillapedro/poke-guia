@@ -32,14 +32,18 @@ export default {
   },
   computed: {
     abilities() {
-      return this.datosPokemon.abilities
-        // .slice(0, 10) // diez primeras habilidades
-        .map((item) => this.parseText(item.ability.name));
+      return (
+        this.datosPokemon.abilities
+          // .slice(0, 10) // diez primeras habilidades
+          .map((item) => this.parseText(item.ability.name))
+      );
     },
     moves() {
-      return this.datosPokemon.moves
-        // .slice(0, 10) // diez primeros movimientos
-        .map((item) => this.parseText(item.move.name));
+      return (
+        this.datosPokemon.moves
+          // .slice(0, 10) // diez primeros movimientos
+          .map((item) => this.parseText(item.move.name))
+      );
     },
     img() {
       return this.datosPokemon.sprites.front_default;
@@ -53,6 +57,7 @@ export default {
       this.stateSearch = true;
       this.datosPokemon = null;
       try {
+        if (!nombre.trim()) throw "Empty name pokemon";
         const response = await fetch(
           `https://pokeapi.co/api/v2/pokemon/${nombre}`
         );
