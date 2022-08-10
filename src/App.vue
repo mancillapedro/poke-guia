@@ -33,7 +33,7 @@ export default {
   computed: {
     abilities() {
       return this.datosPokemon.abilities
-        .slice(0, 10) // diez primeras habilidades
+        // .slice(0, 10) // diez primeras habilidades
         .map((item) => this.parseText(item.ability.name));
     },
     moves() {
