@@ -38,7 +38,7 @@ export default {
     },
     moves() {
       return this.datosPokemon.moves
-        .slice(0, 10) // diez primeros movimientos
+        // .slice(0, 10) // diez primeros movimientos
         .map((item) => this.parseText(item.move.name));
     },
     img() {
